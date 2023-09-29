@@ -11,7 +11,7 @@
 </div>
 
 > **Note**  
-> This is more like a step by step tutorial without much explanation 
+> This is more like a step by step tutorial for everything without much explanation 
 
 ## TABLE OF CONTENTS
 - **Basics** (For a more detailed description of some things look at the [official wiki](wiki.advancedgui.app/wiki/api.html))
