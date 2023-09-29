@@ -37,6 +37,8 @@
 <details>
 <!---Groovy--->  
 <summary>Groovy</summary>
+  
+  <p>Add the following code to your build.gradle file</p>
   <pre lang="groovy">
 repositories {
   maven {
@@ -54,6 +56,8 @@ dependencies {
 <li>   
 <details>   
 <summary>Kotlin</summary>
+  
+  <p>Add the following code to your build.gradle.kts file</p>
   <pre lang="kotlin">
 repositories {
     maven("leoko-dev") {
@@ -71,6 +75,8 @@ dependencies {
 <!---Maven--->
 <details>
 <summary>Maven</summary>
+  
+  <p>Add the following code to your pom.xml file</p>
   
 ```xml
 <repository>
