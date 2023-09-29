@@ -13,6 +13,7 @@
 ## TABLE OF CONTENTS
 - [Installation](#Installation)
 - [Your extension](#Your-layout-extension)
+- [Events](#AdvancedGui-Events)
 
 ---
 
@@ -81,3 +82,84 @@ Add this to your **plugin.yml** `depend: [AdvancedGUI]`
 ---
 
 # Your layout extension
+- Create a new class
+- Add `implements LayoutExtension` to your class
+```java
+import me.leoko.advancedgui.utils.LayoutExtension;
+
+public class MyLayout implements LayoutExtension {
+
+}
+```
+- Register the class in your onEnable()
+```java
+@Override
+public void onEnable() {
+    LayoutManager.getInstance().registerLayoutExtension(new MyLayout(), this);
+}
+```
+
+# AdvancedGui Events
+There are 5 events in AdvancedGUI
+1. GuiInteractionBeginEvent
+2. GuiInteractionExitEvent
+3. GuiWallInstanceRegisterEvent
+4. GuiWallInstanceUnregisterEvent
+5. LayoutLoadEvent
+
+We will start with the `LayoutLoadEvent`
+That event is called once (on server start up)
+```java
+import me.leoko.advancedgui.utils.Layout;
+import me.leoko.advancedgui.utils.LayoutExtension;
+import me.leoko.advancedgui.utils.components.GroupComponent;
+import me.leoko.advancedgui.utils.events.LayoutLoadEvent;
+import org.bukkit.event.EventHandler;
+
+public class MyLayout implements LayoutExtension {
+    private final String LAYOUT_NAME = "MyLayout";
+
+    @Override
+    @EventHandler
+    public void onLayoutLoad(LayoutLoadEvent event) {
+        Layout layout = event.getLayout();
+        if (!layout.getName().equals(LAYOUT_NAME)) return;
+        GroupComponent componentTree = layout.getTemplateComponentTree();
+        // Here you can for example edit the layout template which is sent to every player in the GuiInteractionBeginEvent
+        // You can also specify click actions here
+    }
+
+}
+```
+
+There is also the `GuiInteractionBeginEvent` and `GuiInteractionExitEvent` which are both very usefull for the incoming examples
+```java
+public class MyLayout implements LayoutExtension {
+    private final String LAYOUT_NAME = "MyLayout";
+
+    @Override
+    @EventHandler
+    public void onLayoutLoad(LayoutLoadEvent event) {
+        // ...
+    }
+
+    @EventHandler
+    private void onLayoutJoin(GuiInteractionBeginEvent event) {
+        Layout layout = event.getInteraction().getLayout();
+        if (!layout.getName().equals(LAYOUT_NAME)) return;
+        Player player = event.getPlayer();
+        GroupComponent playerComponentTree = event.getInteraction().getComponentTree();
+        // If you edit the components in the playerComponentTree
+        // it will only change them for the player in this event
+    }
+
+    @EventHandler
+    public void onLayoutLeave(GuiInteractionExitEvent event) {
+        Layout layout = event.getInteraction().getLayout();
+        if (!layout.getName().equals(LAYOUT_NAME)) return;
+        Player player = event.getPlayer();
+        // This event will be called when a player is out of the display radius
+    }
+
+}
+
