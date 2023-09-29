@@ -18,8 +18,8 @@
   - [Events](#AdvancedGui-Events)
   - [Access components](Access-components)
   - [Click actions](Cick-actions)
-- [Special components]()
-- [Some examples]()
+- [Custom components & more](Custom-components)
+- [Concepts](Concepts)
 
 ---
 
@@ -219,6 +219,33 @@ public class MyLayout implements LayoutExtension {
         
         RectComponent rectComponent = componentTree.locate("COMPONENT-ID", RectComponent.class);
         rectComponent.setColor(Color.RED);
+    }
+
+}
+```
+
+---
+
+# Click actions
+```java
+public class MyLayout implements LayoutExtension {
+    private final String LAYOUT_NAME = "MyLayout";
+
+    @Override
+    @EventHandler
+    public void onLayoutLoad(LayoutLoadEvent event) {
+        Layout layout = event.getLayout();
+        if (!layout.getName().equals(LAYOUT_NAME)) return;
+        GroupComponent componentTree = layout.getTemplateComponentTree();
+        // Get the component by the ID
+        Component component = componentTree.locate("COMPONENT-ID");
+
+        component.setClickAction((interaction, player, primaryTrigger) -> {
+            // Do what every you want here
+            player.sendMessage("You clicked the component");
+            player.playSound(player.getLocation(), Sound.UI_BUTTON_CLICK, 1F, 1F);
+        });
+
     }
 
 }
