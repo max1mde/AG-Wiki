@@ -12,7 +12,7 @@
 
 
 ## TABLE OF CONTENTS
-- **Basics** (For a more detailed explanation of some things look at the [official wiki](wiki.advancedgui.app/wiki/api.html))
+- **Basics** (For a more detailed explanation of some things look at the [official wiki](https://wiki.advancedgui.app/wiki/api.html))
   - [Installation](#Installation)
   - [Your extension](#Your-layout-extension)
   - [Events](#AdvancedGui-Events)
