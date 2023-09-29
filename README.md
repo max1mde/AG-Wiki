@@ -190,9 +190,9 @@ public class MyLayout implements LayoutExtension {
 > TextComponent, HoverComponent, ImageComponent RectComponent...
 
 > **Important**  
-> If you modify a component in the LayoutLoadEvent only the **template** of the layout will be changed
-> That means it will change the components for everyone who loads the layout again after that
-> In the `GuiInteractionBeginEvent` a copy of that layout will be sent the player then
+> If you modify a component in the LayoutLoadEvent only the **template** of the layout will be changed.  
+> That means it will change the components for everyone who loads the layout again after that.  
+> In the `GuiInteractionBeginEvent` a copy of that layout will be sent the player then.  
 > 
 > If you want to modify a component for a specific player and not for everyone use the `GuiInteractionBeginEvent`
 > and use `event.getInteraction().getComponentTree()` to get the component tree instead of `layout.getTemplateComponentTree()`
