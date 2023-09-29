@@ -99,6 +99,8 @@ public void onEnable() {
 }
 ```
 
+---
+
 # AdvancedGui Events
 There are 5 events in AdvancedGUI
 1. GuiInteractionBeginEvent
