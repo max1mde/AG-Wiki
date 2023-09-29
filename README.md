@@ -17,7 +17,7 @@
   - [Your extension](#Your-layout-extension)
   - [Events](#AdvancedGui-Events)
   - [Access components](#Access-components)
-  - [Click actions](#Cick-actions)
+  - [Click actions](#Click-actions)
 - [Custom components & more](#Custom-components)
 - [Concepts](#Concepts)
 
