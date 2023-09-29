@@ -10,8 +10,6 @@
   <p>Here you can find some ideas and examples how to implement things using the API.</p>
 </div>
 
-> **Note**  
-> This is more like a step by step tutorial for everything without much explanation 
 
 ## TABLE OF CONTENTS
 - **Basics** (For a more detailed description of some things look at the [official wiki](wiki.advancedgui.app/wiki/api.html))
