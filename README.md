@@ -137,7 +137,7 @@ public class MyLayout implements LayoutExtension {
 }
 ```
 
-There is also the `GuiInteractionBeginEvent` and `GuiInteractionExitEvent` which are both very usefull for the incoming examples
+There is also the `GuiInteractionBeginEvent` and `GuiInteractionExitEvent` which are both very usefull for many cases
 ```java
 public class MyLayout implements LayoutExtension {
     private final String LAYOUT_NAME = "MyLayout";
