@@ -11,11 +11,12 @@
 </div>
 
 ## TABLE OF CONTENTS
-- [Installation](#Installation)
-- [Your extension](#Your-layout-extension)
-- [Events](#AdvancedGui-Events)
-- [Locate components]()
-- [Click actions]()
+- **Basics** (For a more detailed description of some things look at the [official wiki](wiki.advancedgui.app/wiki/api.html))
+  - [Installation](#Installation)
+  - [Your extension](#Your-layout-extension)
+  - [Events](#AdvancedGui-Events)
+  - [Locate components]()
+  - [Click actions]()
 - [Special components]()
 - [Some examples]()
 
