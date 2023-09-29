@@ -16,10 +16,10 @@
   - [Installation](#Installation)
   - [Your extension](#Your-layout-extension)
   - [Events](#AdvancedGui-Events)
-  - [Access components](Access-components)
-  - [Click actions](Cick-actions)
-- [Custom components & more](Custom-components)
-- [Concepts](Concepts)
+  - [Access components](#Access-components)
+  - [Click actions](#Cick-actions)
+- [Custom components & more](#Custom-components)
+- [Concepts](#Concepts)
 
 ---
 
