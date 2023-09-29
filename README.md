@@ -14,6 +14,10 @@
 - [Installation](#Installation)
 - [Your extension](#Your-layout-extension)
 - [Events](#AdvancedGui-Events)
+- [Locate components]()
+- [Click actions]()
+- [Special components]()
+- [Some examples]
 
 ---
 
