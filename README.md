@@ -16,8 +16,8 @@
   - [Installation](#Installation)
   - [Your extension](#Your-layout-extension)
   - [Events](#AdvancedGui-Events)
-  - [Locate components]()
-  - [Click actions]()
+  - [Access components](Access-components)
+  - [Click actions](Cick-actions)
 - [Special components]()
 - [Some examples]()
 
@@ -179,4 +179,47 @@ public class MyLayout implements LayoutExtension {
     }
 
 }
+```
 
+---
+
+# Access components
+
+> **Note**
+> There are many different components...
+> TextComponent, GroupComponent, HoverComponent, ImageComponent RectComponent...
+
+> **Important**  
+> If you modify a component in the LayoutLoadEvent only the **template** of the layout will be changed
+> That means it will change the components for everyone who loads the layout again after that
+> In the `GuiInteractionBeginEvent` a copy of that layout will be sent the player then
+
+> If you want to modify a component for a specific player and not for everyone use the `GuiInteractionBeginEvent`
+> and use `event.getInteraction().getComponentTree()` to get the component tree instead of `layout.getTemplateComponentTree()`
+
+```java
+public class MyLayout implements LayoutExtension {
+    private final String LAYOUT_NAME = "MyLayout";
+
+    @Override
+    @EventHandler
+    public void onLayoutLoad(LayoutLoadEvent event) {
+        Layout layout = event.getLayout();
+        if (!layout.getName().equals(LAYOUT_NAME)) return;
+        GroupComponent componentTree = layout.getTemplateComponentTree();
+        // You can simply get a component by the ID
+        Component component = componentTree.locate("COMPONENT-ID");
+
+        // Or a specific component
+        TextComponent textComponent = componentTree.locate("COMPONENT-ID", TextComponent.class);
+        textComponent.setText("Hello world!");
+
+        ImageComponent imageComponent = componentTree.locate("COMPONENT-ID", ImageComponent.class);
+        imageComponent.setImage(/*Your Image*/);
+        
+        RectComponent rectComponent = componentTree.locate("COMPONENT-ID", RectComponent.class);
+        rectComponent.setColor(Color.RED);
+    }
+
+}
+```
