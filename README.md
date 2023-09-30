@@ -18,6 +18,8 @@
   - [Access components](#Access-components)
   - [Click actions](#Click-actions)
 - [Custom components & more](#Custom-components)
+  - [Creating your own component](#Creating-your-own-component)
+  - [The list component](#The-list-component)
 - [Concepts](#Concepts)
 
 ---
@@ -249,3 +251,80 @@ public class MyLayout implements LayoutExtension {
 
 }
 ```
+
+---
+
+# Custom components
+
+> **Important**
+> If you want to use a custom component in your layout you first need to manually add an dummy component
+> You can now insert your component in the dummy component
+
+```java
+public class MyLayout implements LayoutExtension {
+    private final String LAYOUT_NAME = "MyLayout";
+
+    @Override
+    @EventHandler
+    public void onLayoutLoad(LayoutLoadEvent event) {
+        Layout layout = event.getLayout();
+        if (!layout.getName().equals(LAYOUT_NAME)) return;
+        GroupComponent componentTree = layout.getTemplateComponentTree();
+        // Create your component
+        DummyComponent dummyComponent = componentTree.locate("COMPONENT-ID", DummyComponent.class);
+        // Insert your component into the dummy component
+        dummyComponent.setComponent(YourCustomComponent);
+    }
+
+}
+```
+
+## Creating your own component
+
+- Create a new class which extends the CustomComponent class
+
+Here is an example for a simple hover component with a text and background
+```java
+public class ExampleComponent extends CustomComponent {
+    public ExampleComponent(String text, int x, int y, Interaction interaction) {
+        super(interaction);
+
+        final Font textFont = ResourceManager.getInstance().getFont("Roboto", 23);
+
+        final GroupComponent normal = new GroupComponent("", null, false, interaction, Arrays.asList(
+                new TextComponent("", null, false, interaction, x, y, textFont, text, Color.RED, TextComponent.Alignment.CENTER),
+                new RectComponent("", null, false, interaction, x, y, 202, 135, new Color(86, 65, 47), 10)
+        ));
+        final GroupComponent hovered = new GroupComponent("", null, false, interaction, Arrays.asList(
+                new TextComponent("", null, false, interaction, x, y, textFont, text, Color.WHITE, TextComponent.Alignment.CENTER),
+                new RectComponent("", null, false, interaction, x, y, 202, 135, new Color(49, 40, 32), 10)
+        ));
+
+        this.component = new HoverComponent("", new Action() {
+            @Override
+            public void execute(Interaction interaction, Player player, boolean primaryTrigger) {
+                player.sendMessage("You clicked your custom component!");
+            }
+        }, false, interaction, normal, hovered);
+    }
+}
+```
+
+Now you can insert your custom component in your dummy component
+```java
+    @Override
+    @EventHandler
+    public void onLayoutLoad(LayoutLoadEvent event) {
+        ...
+        DummyComponent dummyComponent = componentTree.locate("COMPONENT-ID", DummyComponent.class);
+
+        ExampleComponent exampleComponent new ExampleComponent("Hello world!", 100, 100, event.getLayout().getDefaultInteraction());
+        dummyComponent.setComponent(exampleComponent);
+    }
+```
+
+## The list component
+> **Note**
+> The list component works completely different in the api than using the web editor
+
+Because the list component is way more complicated the documentation is located [here](#ListComponent.md)
