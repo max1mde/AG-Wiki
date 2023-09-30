@@ -7,7 +7,7 @@
 
 
 <details>
-<summary>You may have worked with the list component in the [web editor](https://advancedgui.app) and noticed that you can set the style once.  </summary>
+<summary>You may have worked with the list component in the <a href="https://advancedgui.app">web editor</a> and noticed that you can set the style once.  </summary>
 <img src="https://github.com/max1mde/AG-Wiki/assets/114857048/1486def7-a63d-42e4-ae4a-e4f9b49ef12c">
 </details>
 <details>
