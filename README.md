@@ -126,7 +126,7 @@ There are 5 events in AdvancedGUI
 5. LayoutLoadEvent
 
 We will start with the `LayoutLoadEvent`
-That event is called once (on server start up)
+That event is called once (on server start up when a layout is loaded)
 ```java
 import me.leoko.advancedgui.utils.Layout;
 import me.leoko.advancedgui.utils.LayoutExtension;
