@@ -325,6 +325,6 @@ Now you can insert your custom component in your dummy component
 
 ## The list component
 > **Note**
-> The list component works completely different in the api than using the web editor
+> The list component works completely different in the api than in the [web editor](https://advancedgui.app)
 
 Because the list component is way more complicated the documentation is located [here](/ListComponent.md)
