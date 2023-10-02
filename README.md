@@ -6,7 +6,7 @@
 <a href="https://discord.gg/bKjYgSFd8b"><img src="https://img.shields.io/badge/My%20Discord%20Server-E43E1E" alt="Version"></a>
   
   <h1>AdvancedGui API Wiki (Unofficial)</h1>
-  <p>You are using the <a href="https://www.spigotmc.org/resources/itemframe-touchscreens-advancedgui.83636/">AdvancedGUI</a> <b>API</b> and the <a href="https://wiki.advancedgui.app/wiki/api.html">official wiki<a> is not enough for you?</p>
+  <p>You are using the <a href="https://www.spigotmc.org/resources/itemframe-touchscreens-advancedgui.83636/">AdvancedGUI</a> <b>API</b> and the <a href="https://wiki.advancedgui.app/wiki/api.html">official wiki<a> has not enough information for you?</p>
   <p>Here you can find some ideas and examples how to implement things using the API.</p>
 </div>
 
