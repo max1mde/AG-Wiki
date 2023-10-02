@@ -27,7 +27,7 @@
 # Installation
 > **Note**
 > v2.2.2 is **not** the newest AdvancedGUI version  
-> But it is the latest version on the [official repo](https://repo.leoko.dev/releases/me/leoko/advancedgui/AdvancedGUI)
+> But it is the latest version on the [official repository](https://repo.leoko.dev/releases/me/leoko/advancedgui/AdvancedGUI)
 <!---Gradle-->  
 <details>
 <summary>Gradle</summary>
