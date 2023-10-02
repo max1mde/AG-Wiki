@@ -258,7 +258,7 @@ public class MyLayout implements LayoutExtension {
 
 > **Important**
 > If you want to use a custom component in your layout you first need to manually add a dummy component
-> You can now insert your component in the dummy component
+> after that you can insert your component in the dummy component
 
 ```java
 public class MyLayout implements LayoutExtension {
