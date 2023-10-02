@@ -20,7 +20,7 @@
 - [Custom components & more](#Custom-components)
   - [Creating your own component](#Creating-your-own-component)
   - [The list component](#The-list-component)
-- [Concepts](#Concepts)
+- [My ideas](/ideas)
 
 ---
 
