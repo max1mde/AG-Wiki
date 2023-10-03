@@ -161,7 +161,7 @@ public class MyLayout implements LayoutExtension {
         var componentTree = event.getLayout().getTemplateComponentTree();
         /*
         You need to create a dummy component in the web editor to add your custom list to your layout
-        like described [here](https://github.com/max1mde/AG-Wiki#Custom-components)
+        like described <a href="https://github.com/max1mde/AG-Wiki#Custom-components">here</a>
         */
         var dummyList = componentTree.locate("COMPONENT-ID", DummyComponent.class);
 
