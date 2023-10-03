@@ -19,7 +19,7 @@
   - [Click actions](#Click-actions)
 - [Custom components & more](#Custom-components)
   - [Creating your own component](#Creating-your-own-component)
-  - [The list component](#The-list-component)
+  - [The list component](/ListComponent.md)
 - [My ideas](/ideas)
   - [Remove the block selection box](/ideas/NoBlockSelectionBox.md) 
   - [Cache remote images](/ideas/CacheRemoveImages.md)
