@@ -98,6 +98,35 @@ items.remove("Some text");
 ```
 If you want to apply that to your list in the layout just call the `listComponent.refreshItems()` method
 
+### 5. Next and previous page buttons (Optional)
+
+If you want to switch between your pages of your list component
+you can add buttons in the web editor to your gui and add a click action like that:
+```java
+    @Override
+    @EventHandler
+    public void onLayoutLoad(LayoutLoadEvent event) {
+        Layout layout = event.getLayout();
+        if (!layout.getName().equals(LAYOUT_NAME)) return;
+        GroupComponent componentTree = layout.getTemplateComponentTree();
+
+        RectComponent prevButton = componentTree.locate("YOUR-PREV-BUTTON-ID", RectComponent.class); // Can be any component (HoverComponent, GroupComponent, TextComponent...)
+        prevButton.setClickAction((interaction, player, primaryTrigger) -> {
+            GroupComponent playerComponentTree = interaction.getComponentTree(); 
+            ListComponent listComponent = playerComponentTree.locate("YOUR-LIST-COMPONENT-ID", ListComponent.class);
+            if (listComponent.getPage() != 0) listComponent.previousPage();
+        });
+
+        RectComponent nextButton = componentTree.locate("YOUR-NEXT-BUTTON-ID", RectComponent.class); // Can be any component (HoverComponent, GroupComponent, TextComponent...)
+        nextButton.setClickAction((interaction, player, primaryTrigger) -> {
+            GroupComponent playerComponentTree = interaction.getComponentTree(); 
+            ListComponent listComponent = playerComponentTree.locate("YOUR-LIST-COMPONENT-ID", ListComponent.class);
+            if (listComponent.getPage() != listComponent.getMaxPage()) listComponent.nextPage();
+        });
+    }
+```
+
+
 <details>
 <summary>Here is a <b>full example</b> how all that together can look like <i>(Click to reveal)</i></summary>
   
