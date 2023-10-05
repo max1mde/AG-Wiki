@@ -57,7 +57,7 @@ public class InteractionListExample implements LayoutExtension {
     private void updateList() {
         /*
             Update your list component in the template component tree
-            so that it is update for every new player who joins the layout
+            so that it is updated for every new player who joins the layout
          */
         templateComponentTree.locate("YOUR-LIST-COMPONENT-ID", ListComponent.class).refreshItems();
         /*
