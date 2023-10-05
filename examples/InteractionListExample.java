@@ -62,7 +62,7 @@ public class InteractionListExample implements LayoutExtension {
             Update your list component for every player which has already joined the layout
          */
         for (Interaction interaction : currentInteractions.values()) {
-            var list = interaction.getComponentTree().locate("YOUR-LIST-COMPONENT-ID", ListComponent.class);
+            ListComponent list = interaction.getComponentTree().locate("YOUR-LIST-COMPONENT-ID", ListComponent.class);
             list.refreshItems();
         }
     }
