@@ -16,8 +16,11 @@ import java.util.HashMap;
 
 public class InteractionListExample implements LayoutExtension {
     private final String LAYOUT_NAME = "MyLayout";
-    private HashMap<Player, Interaction> currentInteractions = new HashMap<>();
     private GroupComponent templateComponentTree;
+    /**
+     * Here are all of your current interactions saved (Only from the layout with the name LAYOUT_NAME)
+     */
+    private HashMap<Player, Interaction> currentInteractions = new HashMap<>();
 
     @Override
     @EventHandler
