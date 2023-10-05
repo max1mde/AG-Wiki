@@ -28,6 +28,7 @@ public class InteractionListExample implements LayoutExtension {
         Layout layout = event.getLayout();
         if (!layout.getName().equals(LAYOUT_NAME)) return;
         GroupComponent componentTree = layout.getTemplateComponentTree();
+        //Init the template component tree variable
         this.templateComponentTree = componentTree;
     }
 
@@ -52,15 +53,13 @@ public class InteractionListExample implements LayoutExtension {
     /**
      * Here is how you can update your list component from here: https://github.com/max1mde/AG-Wiki/blob/main/examples/ListComponentExample.java
      * for everyone
-     *
-     * @param componentTree
      */
-    private void updateList(GroupComponent componentTree) {
+    private void updateList() {
         /*
             Update your list component in the template component tree
             so that it is update for every new player who joins the layout
          */
-        componentTree.locate("YOUR-LIST-COMPONENT-ID", ListComponent.class).refreshItems();
+        templateComponentTree.locate("YOUR-LIST-COMPONENT-ID", ListComponent.class).refreshItems();
         /*
             Update your list component for every player which has already joined the layout
          */
