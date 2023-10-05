@@ -23,6 +23,10 @@
 - [My ideas](/ideas)
   - [Remove the block selection box](/ideas/NoBlockSelectionBox.md) 
   - [Cache remote images](/ideas/CacheRemoveImages.md)
+- [Examples](/examples)
+  - [Example custom component](/examples/ExampleComponent.java)
+  - [Saving current interactions](/examples/InteractionListExample.java)
+  - [ListComponent example](/examples/ListComponentExample.java)
 
 ---
 
