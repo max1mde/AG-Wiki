@@ -41,7 +41,7 @@ public class InteractionListExample implements LayoutExtension {
     }
 
     @EventHandler
-    public void onLayoutLeave(GuiInteractionExitEvent event) {
+    private void onLayoutLeave(GuiInteractionExitEvent event) {
         Layout layout = event.getInteraction().getLayout();
         Player player = event.getPlayer();
         if (!layout.getName().equals(LAYOUT_NAME)) return;
