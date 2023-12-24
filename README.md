@@ -31,7 +31,7 @@
 ---
 
 # Installation
-> **Note**
+> [!NOTE]
 > v2.2.2 is **not** the newest AdvancedGUI version  
 > But it is the latest version [here](https://repo.leoko.dev/releases/me/leoko/advancedgui/AdvancedGUI)
 <!---Gradle-->  
@@ -192,11 +192,11 @@ public class MyLayout implements LayoutExtension {
 
 # Access components
 
-> **Note**
+> [!NOTE]
 > There are many different components...  
 > TextComponent, HoverComponent, ImageComponent RectComponent...
 
-> **Important**  
+> [!IMPORTANT]    
 > If you modify a component in the LayoutLoadEvent only the **template** of the layout will be changed.  
 > That means it will change the components for everyone who loads the layout again after that.  
 > In the `GuiInteractionBeginEvent` a copy of that layout will be sent the player then.  
@@ -262,7 +262,7 @@ public class MyLayout implements LayoutExtension {
 
 # Custom components
 
-> **Important**
+> [!IMPORTANT]  
 > If you want to use a custom component in your layout you first need to manually add a dummy component
 > after that you can insert your component in the dummy component
 
@@ -330,7 +330,7 @@ Now you can insert your custom component in your dummy component
 ```
 
 ## The list component
-> **Note**
+> [!NOTE]  
 > The list component works completely different in the api than in the [web editor](https://advancedgui.app)
 
 Because the list component is way more complicated the documentation is located [here](/ListComponent.md)
