@@ -21,7 +21,7 @@ If you've used the list component in the [web editor](https://advancedgui.app), 
 <img src="https://github.com/max1mde/AG-Wiki/assets/114857048/0dd87307-33b0-41b4-b3a8-0bd814f318c1">
 </details>
 
-> **Important**  
+> [!IMPORTANT]   
 > You can **not** just simply create a list component in the [web editor](https://advancedgui.app) and add items using the api afterwards...  
 > Reason for this is, that the list component gets converted into group & view components  
 > This means you need to create your own list component from scratch within your extension to modify it afterwards
